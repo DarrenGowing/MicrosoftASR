@@ -29,6 +29,11 @@ $listofprograms.GetEnumerator() | ForEach-Object {
     #Scomis
     if ((Test-Path -Path "$TestPathVar")) {
 
+        if((Test-Path -Path "$shortcut_path")) {
+            Write-Host "Shortcut exists for $description, skipping..."
+            return
+        }
+
         #Start Menu
 
         $workingdirectory = (Get-ChildItem $target).DirectoryName
@@ -51,8 +56,9 @@ $listofprograms.GetEnumerator() | ForEach-Object {
         $Shortcut.Save()
         Start-Sleep -Seconds 1
 
+        Write-Host "Repaired $description"
     }
     else {
-        Write-Host "No Scomis"
+        Write-Host "No $description"
     }
 }
