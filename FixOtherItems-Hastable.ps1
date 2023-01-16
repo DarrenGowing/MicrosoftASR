@@ -51,6 +51,7 @@ $listofprograms.GetEnumerator() | ForEach-Object {
         $Shortcut.Save()
         Start-Sleep -Seconds 1
 
+        Write-Host "Repaired $description"
     }
     else {
         Write-Host "No $description"
