@@ -53,6 +53,6 @@ $listofprograms.GetEnumerator() | ForEach-Object {
 
     }
     else {
-        Write-Host "No Scomis"
+        Write-Host "No $description"
     }
 }
